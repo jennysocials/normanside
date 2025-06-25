@@ -1,19 +1,21 @@
-<!-- STYLES -->
-<style>
-  .practice-areas-menu-wrapper {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    z-index: 9991;
-    padding: 40px 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border-top: 1px solid #ccc;
-  }
-
- .practice-areas-menu-columns {
+/* NORMANSIDE MEGA MENU CSS START */
+.normanside-menu-wrapper {
+  display: none;
+  position: fixed;
+  top: 110px;
+  left: 0;
+  width: 100%;
+  background: #12418D;
+   z-index: 9991 !important;
+  padding: 40px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-top: 1px solid #222c40;
+}
+.normanside-menu-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.normanside-menu-columns {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -21,143 +23,89 @@
   padding: 5px 5px;
   scrollbar-width: thin;
 }
-
-.practice-areas-menu-col {
+.normanside-menu-col {
   flex: 0 0 260px; /* Fixed width */
   max-width: 260px;
   padding: 20px;
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+  background-color: #05122a;
+  border: 1px solid #1d293e;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.practice-areas-menu-columns::-webkit-scrollbar {
+.normanside-menu-columns::-webkit-scrollbar {
   height: 10px;
-  background: #00703c;
+  background: #003b82;
 }
-
-.practice-areas-menu-columns::-webkit-scrollbar-track {
-  background: #f3f3f3;
+.normanside-menu-columns::-webkit-scrollbar-track {
+  background: #0e274d;
   border-radius: 6px;
 }
-
-.practice-areas-menu-columns::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, #00703c, #005932);
+.normanside-menu-columns::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #007fff, #005b96);
   border-radius: 6px;
   transition: background 0.3s ease;
 }
-
-.practice-areas-menu-columns::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(90deg, #009957, #003b1f);
+.normanside-menu-columns::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #005b96, #0099ff);
 }
-
-
-
-  .practice-areas-menu-col:hover {
-    box-shadow: 0 10px 25px rgba(0,89,50,0.2);
-    transform: translateY(-5px) scale(1.02);
-  }
-
-  .practice-areas-menu-col h3 a {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
-    text-decoration: none;
-    display: inline-block;
-    background: linear-gradient(90deg, #005932, #00994d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: none; /* Disable any transitions */
-    animation: none; /* Disable animations */
-    opacity: 1; /* Ensure full visibility */
-    white-space: nowrap;
-    margin-bottom: 12px; /* or adjust to your liking */
-  }
-  
-  /* Override Squarespace fading animations */
-.practice-areas-menu-col h3,
-.practice-areas-menu-col h3 a {
-  animation: none !important; /* Disable animations */
-  transition: none !important; /* Disable transitions */
-  opacity: 1 !important; /* Ensure text remains fully visible */
+.normanside-menu-col:hover {
+  box-shadow: 0 10px 25px rgba(0,91,150,0.2);
+  transform: translateY(-5px) scale(1.02);
 }
-
-  .practice-areas-menu-col h3 a:hover {
-    opacity: 0.75;
-  }
-
-  .practice-areas-menu-img {
-    width: 100%;
-    height: 160px;
-    background: #ddd;
-    border-radius: 4px;
-    margin-bottom: 12px;
-  }
-
-  .practice-areas-menu-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-
-  .practice-areas-menu-col ul li {
-    margin-bottom: 6px;
-    font-size: 1rem;
-  }
-
-  .practice-areas-menu-col ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #005932;
-    transition: all 0.2s ease;
-    display: inline-block;
-    position: relative;
-  }
-
-  .practice-areas-menu-col ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #00703c;
-    transition: width 0.25s ease;
-  }
-
-  .practice-areas-menu-col ul li a:hover {
-    color: #003b1f;
-  }
-
-  .practice-areas-menu-col ul li a:hover::after {
-    width: 100%;
-  }
-
-  .practice-areas-menu-button-container {
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  .practice-areas-menu-btn {
-    display: inline-block;
-    padding: 10px 30px;
-    font-weight: bold;
-    border: 2px solid #005932;
-    background-color: #fff;
-    color: #005932;
-    border-radius: 100px;
-    text-decoration: none;
-    box-shadow: 0 6px 0 #005932;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .practice-areas-menu-btn:hover {
-    background-color: #005932;
-    color: #fff;
-    box-shadow: none;
-    transform: translateY(2px);
-  }
-</style>
+.normanside-menu-col h3 {
+  margin-bottom: 16px;
+  width: 100%;
+}
+.normanside-menu-col h3 a {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+    background: linear-gradient(90deg, #fff 0%, #12418D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  transition: none;
+  animation: none;
+  opacity: 1;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
+}
+.normanside-menu-col h3 a:hover {
+  border-bottom: 2px solid #7ed2ff;
+  opacity: 1;
+}
+.normanside-arrow {
+  height: 22px;
+  width: 22px;
+  margin-left: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: none !important;
+  animation: none !important;
+  opacity: 1 !important;
+  filter: none;
+}
+.normanside-menu-img {
+  width: 100%;
+  height: 160px;
+  background: #d3e7fa center center/cover no-repeat;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  background-size: cover;
+  background-position: center;
+}
+/* Remove unwanted styles for lists (none in this menu) */
+.normanside-menu-col ul {
+  display: none !important;
+}
+/* NORMANSIDE MEGA MENU CSS END */
