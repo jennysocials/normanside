@@ -1,18 +1,26 @@
-/* === Mega Menu Improved Styles === */
+@media (max-width: 800px) {
+  .header-nav a,
+  .Header-nav-list .Header-nav-item a {
+    padding: 0.5em 1em;
+  }
+}
 #products-mega-menu {
   display: none;
   position: absolute;
-  z-index: 9991;
-  min-width: 90vw;
-  left: 5vw !important;
   top: 200px !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  max-width: 1200px;
+  width: 100vw;
   background: linear-gradient(to bottom, #f8faf7 0%, #fff 100%);
-  border-radius: 16px;
+  border-radius: 0px;
   box-shadow: 0 2px 32px rgba(0,0,0,0.2);
   padding: 48px 32px 36px 32px;
   transition: opacity 0.2s;
   opacity: 0;
   pointer-events: none;
+  z-index: 9991;
+  overflow: visible;
 }
 #products-mega-menu.visible {
   display: block !important;
@@ -27,6 +35,8 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 16px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 #products-mega-menu-inner::-webkit-scrollbar {
   height: 10px;
@@ -163,7 +173,6 @@
 .products-mega-menu-list li:active {
   color: #062103;
 }
-/* Make links fill the full line and be fully clickable */
 .products-mega-menu-list a {
   color: inherit;
   text-decoration: none;
@@ -206,45 +215,38 @@
 .products-mega-menu-btn:active {
   background: #14500C;
 }
-/* Responsive tweaks */
+/* Arrow styling */
+#mega-menu-left, #mega-menu-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  background: rgba(255,255,255,0.85);
+  border: none;
+  width: 40px;
+  height: 80px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: background 0.18s;
+  pointer-events: auto;
+}
+#mega-menu-left { left: 0; }
+#mega-menu-right { right: 0; }
+#mega-menu-left:active, #mega-menu-right:active {
+  background: #bfe0ca;
+}
+/* Responsive */
 @media (max-width: 1200px) {
-  #products-mega-menu-inner {
-    gap: 18px;
-    padding: 18px 6px;
-  }
-  .products-mega-menu-col {
-    flex: 0 0 120px;
-    min-width: 120px;
-    max-width: 120px;
-  }
-  .products-mega-menu-btn {
-    width: 120px;
-    min-width: 120px;
-    max-width: 120px;
-  }
-  .products-mega-menu-icon {
-    width: 48px;
-    height: 48px;
-  }
-  .products-mega-menu-icon img {
-    width: 40px;
-    height: 40px;
-  }
+  #products-mega-menu { max-width: 98vw; }
+  #products-mega-menu-inner { gap: 18px; }
 }
 @media (max-width: 900px) {
-  #products-mega-menu-inner {
-    gap: 10px;
-    padding: 12px 2px;
-  }
-  .products-mega-menu-col {
-    flex: 0 0 100px;
-    min-width: 100px;
-    max-width: 100px;
-    margin-bottom: 16px;
-  }
-  .products-mega-menu-btn {
-    width: 100px;
-    min-width: 100px;
-    max-width: 100px;
-  }
+  #products-mega-menu-inner { gap: 10px; }
+  #products-mega-menu { padding: 18px 6px 18px 6px; }
+  #mega-menu-left, #mega-menu-right { height: 48px; width: 30px; font-size: 1.3rem; }
 }
