@@ -1,0 +1,250 @@
+/* === Mega Menu Improved Styles === */
+#products-mega-menu {
+  display: none;
+  position: absolute;
+  z-index: 9991;
+  min-width: 90vw;
+  left: 5vw !important;
+  top: 200px !important;
+  background: linear-gradient(to bottom, #f8faf7 0%, #fff 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 32px rgba(0,0,0,0.2);
+  padding: 48px 32px 36px 32px;
+  transition: opacity 0.2s;
+  opacity: 0;
+  pointer-events: none;
+}
+#products-mega-menu.visible {
+  display: block !important;
+  opacity: 1;
+  pointer-events: auto;
+}
+#products-mega-menu-inner {
+  display: flex;
+  gap: 32px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 16px;
+}
+#products-mega-menu-inner::-webkit-scrollbar {
+  height: 10px;
+  background: #eee;
+  border-radius: 8px;
+}
+#products-mega-menu-inner::-webkit-scrollbar-thumb {
+  background: #bfe0ca;
+  border-radius: 8px;
+}
+.products-mega-menu-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 220px;
+  min-width: 220px;
+  max-width: 220px;
+  margin-bottom: 16px;
+  transition: 
+    box-shadow 0.22s,
+    transform 0.20s,
+    background 0.24s;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+}
+.products-mega-menu-col:hover,
+.products-mega-menu-col:focus-within {
+  box-shadow: 0 8px 32px rgba(55,157,42,0.12), 0 2px 12px rgba(33,56,36,0.08);
+  transform: translateY(-4px) scale(1.045);
+  background: #f3fbef;
+}
+.products-mega-menu-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.products-mega-menu-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #eee;
+  border: 6px solid #ccc;
+  transition: box-shadow 0.22s;
+}
+.products-mega-menu-col:hover .products-mega-menu-icon img {
+  box-shadow: 0 0 0 3px #bfe0ca;
+}
+/* Main category title - clickable and underline on hover */
+.products-mega-menu-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.products-mega-menu-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #0e1b0f;
+  letter-spacing: 0.02em;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.17s;
+}
+.products-mega-menu-title-row:hover .products-mega-menu-title,
+.products-mega-menu-title:focus {
+  color: #379d2a;
+}
+.products-mega-menu-title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: linear-gradient(90deg, #379d2a 0%, #14500C 100%);
+  border-radius: 1px;
+  width: 0;
+  transition: width 0.27s cubic-bezier(.77,0,.18,1);
+}
+.products-mega-menu-title-row:hover .products-mega-menu-title::after,
+.products-mega-menu-title:focus::after {
+  width: 100%;
+}
+.products-mega-menu-leaf {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+/* Dropdown links - interactive underline and pointer; each item on its own line */
+.products-mega-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  width: 100%;
+  text-align: center;
+}
+.products-mega-menu-list li {
+  color: #379d2a;
+  font-style: italic;
+  font-size: 1.06rem;
+  margin-bottom: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.16s;
+  display: block;
+  padding: 2px 0 2px 0;
+  text-align: center;
+}
+.products-mega-menu-list li:hover,
+.products-mega-menu-list li:focus {
+  color: #14500C;
+}
+.products-mega-menu-list li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #379d2a 60%, #14500C 100%);
+  border-radius: 1px;
+  width: 0;
+  transition: width 0.22s cubic-bezier(.77,0,.18,1);
+}
+.products-mega-menu-list li:hover::after,
+.products-mega-menu-list li:focus::after {
+  width: 100%;
+}
+.products-mega-menu-list li:active {
+  color: #062103;
+}
+/* Make links fill the full line and be fully clickable */
+.products-mega-menu-list a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+/* Aligned buttons - all same width, centered, interactive */
+.products-mega-menu-btn {
+  background: #0e1b0f;
+  color: #fff;
+  border-radius: 24px;
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin: 20px auto 0 auto;
+  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
+  transition: 
+    background 0.2s,
+    color 0.15s,
+    box-shadow 0.18s,
+    transform 0.16s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 8px rgba(33,56,36,0.06);
+}
+.products-mega-menu-btn:hover,
+.products-mega-menu-btn:focus {
+  background: #379d2a;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(55,157,42,0.12);
+  transform: translateY(-2px) scale(1.05);
+  outline: none;
+}
+.products-mega-menu-btn:active {
+  background: #14500C;
+}
+/* Responsive tweaks */
+@media (max-width: 1200px) {
+  #products-mega-menu-inner {
+    gap: 18px;
+    padding: 18px 6px;
+  }
+  .products-mega-menu-col {
+    flex: 0 0 120px;
+    min-width: 120px;
+    max-width: 120px;
+  }
+  .products-mega-menu-btn {
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+  }
+  .products-mega-menu-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .products-mega-menu-icon img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 900px) {
+  #products-mega-menu-inner {
+    gap: 10px;
+    padding: 12px 2px;
+  }
+  .products-mega-menu-col {
+    flex: 0 0 100px;
+    min-width: 100px;
+    max-width: 100px;
+    margin-bottom: 16px;
+  }
+  .products-mega-menu-btn {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+  }
+}
